@@ -3,16 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./Assets/style.css" rel="stylesheet"></link>
     <title>High Scores</title>
 </head>
 <body>
-    <header>
+    <header class="header">
         <div>
             <a class="nav-link" href="index.html">
             <button id="returnButton" > Return to Quiz</button>
         </a>
         </div>
     </header>
-    <script src="/Assets/scores.js"></script>
+
+    <div class="resultBox">
+        <div class="completeText">Finished!</div>
+        <div class="scoreText">
+            <span>Your score is <p></p></span>
+        </div>
+        <div class="controls">
+            <button class="restart">Replay Quiz</button>
+            <button class="quit">Quit</button>
+        </div>
+    </div>
+
+
+    <script src="./Assets/scores.js"></script>
 </body>
 </html>
