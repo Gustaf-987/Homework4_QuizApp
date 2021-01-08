@@ -44,21 +44,31 @@ const questionElement = document.getElementById("question");
 const answerButtonsElement = document.getElementById("answerbtn");
 var timeEl = document.querySelector("#timer");
 var secondsLeft = 5;
+var timer = secondsLeft;
 var count = localStorage.getItem("count");
 
 count = secondsLeft;
 
-let shuffledQuestions, currentQuesitonIndex
+let shuffledQuestions, currentQuestionIndex
+let nextbutton = submit;
+let startButton = restart;
 
+// click events for the navigation buttons. Starts game, returns next question, or score on last question.
 startButton.addEventListener("click", startGame)
 nextButton.addEventListener("click", () =>{
+  preventDefault();
   currentQuesitonIndex++
   setNextQuestion();
-  // localStorage.setItem("count", count)
+  if (nextButton = submit){
+    score();
+    
+  }
 })
 
+// setting up timer interval. When game starts begins counting down to 0; on 0 displays game over screen and returns score. Logs score to local storage.
 function setTime(){
   var timerInterval = setInterval(function(){
+    timer.reset();
     secondsLeft--;
     timeEl.textContent = secondsLeft + " seconds left";
 
@@ -71,9 +81,19 @@ function setTime(){
 
 function sendMessage(){
   timeEl.textContent = "Times UP! ";
-
+  answerButtonsElement.classList.add("hide");
+  localStorage.getItem("count");
+  questionElement.appendChild("Your Score " + count);
+  
 }
 
+function score(){
+  if (shuffledQuestions > currentQuesitonIndex +1){
+    localStorage.setItem("count", count)
+  }
+}
+
+// Begins game, randomly shuffles questions. When answered, hitting next displays next randomized question. 
 function startGame(){
   setTime();
   startButton.classList.add("hide")
@@ -88,6 +108,7 @@ function setNextQuestion(){
   showQuestion(shuffledQuestions[currentQuesitonIndex])
 }
 
+// Displays questions
 function showQuestion(question){
   questionElement.innerText = question.question
   question.answers.forEach(answer => {
@@ -102,7 +123,7 @@ function showQuestion(question){
   })
 
 }
-
+// Resets green and red true/false settings
 function resetState() {
   clearStatusClass(document.body)
   nextButton.classList.add("hide")
@@ -112,6 +133,7 @@ function resetState() {
   }
 }
 
+// Determines if answer correct, displays new options when all q's answered.
 function selectAnswer(e){
   const selectedButton = e.target
   const correct = selectedButton.dataset.correct
