@@ -8,4 +8,6 @@ Links:
 https://github.com/Gustaf-987/Homework4_QuizApp
 https://gustaf-987.github.io/Homework4_QuizApp/
 
+![Screenshot](https://github.com/Gustaf-987/Homework4_QuizApp/blob/main/Assets/Screenshot%20(32).png)
+
 
