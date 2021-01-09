@@ -1,38 +1,38 @@
 const questions =[
   {
-    question: "testing",
+    question: "How well does this app work?",
     answers: [
-      {text: "test", correct: false},
-      {text: "test", correct: true},
-      {text: "test", correct: false},
-      {text: "test", correct: false}
+      {text: "Flaming hot cheetos", correct: false},
+      {text: "Dumpster Fire", correct: true},
+      {text: "Kind of ok", correct: false},
+      {text: "Got the questions to show up", correct: false}
     ]
   },
   {
-    question: "testing",
+    question: "Who was the only 6 star General in American History?",
     answers: [
-      {text: "test", correct: false},
-      {text: "test", correct: true},
-      {text: "test", correct: false},
-      {text: "test", correct: false}
+      {text: "Mickey Mouse", correct: false},
+      {text: "Capt'n Crunch", correct: false},
+      {text: "John J. Pershing", correct: true},
+      {text: "Lex Luthor", correct: false}
     ]
   },
   {
-    question: "testing",
+    question: "What is the longest river in the world?",
     answers: [
-      {text: "test", correct: false},
-      {text: "test", correct: true},
-      {text: "test", correct: false},
-      {text: "test", correct: false}
+      {text: "Nile", correct: true},
+      {text: "Yellor River", correct: false},
+      {text: "Amazon", correct: false},
+      {text: "Yangtze", correct: false}
     ]
   },
   {
-    question: "testing",
+    question: "Which band is NOT in the Rock N Roll hall of fame?",
     answers: [
-      {text: "test", correct: false},
-      {text: "test", correct: true},
-      {text: "test", correct: false},
-      {text: "test", correct: false}
+      {text: "ACDC", correct: false},
+      {text: "Aerosmith", correct: false},
+      {text: "Beastie Boys", correct: false},
+      {text: "Motörhead", correct: true},
     ]
   }
 ]
@@ -43,32 +43,32 @@ const questionContainerElement = document.getElementById("questionContainer");
 const questionElement = document.getElementById("question");
 const answerButtonsElement = document.getElementById("answerbtn");
 var timeEl = document.querySelector("#timer");
-var secondsLeft = 5;
+var secondsLeft = 40;
 var timer = secondsLeft;
 var count = localStorage.getItem("count");
 
 count = secondsLeft;
 
 let shuffledQuestions, currentQuestionIndex
-let nextbutton = submit;
-let startButton = restart;
+// let nextbutton = submit;
+// let startButton = restart;
 
 // click events for the navigation buttons. Starts game, returns next question, or score on last question.
 startButton.addEventListener("click", startGame)
 nextButton.addEventListener("click", () =>{
-  preventDefault();
+  // preventDefault();
   currentQuesitonIndex++
   setNextQuestion();
-  if (nextButton = submit){
-    score();
+  // if (nextButton = submit){
+  //   score();
     
-  }
+  // }
 })
 
 // setting up timer interval. When game starts begins counting down to 0; on 0 displays game over screen and returns score. Logs score to local storage.
 function setTime(){
   var timerInterval = setInterval(function(){
-    timer.reset();
+    // timer.reset();
     secondsLeft--;
     timeEl.textContent = secondsLeft + " seconds left";
 
@@ -83,7 +83,7 @@ function sendMessage(){
   timeEl.textContent = "Times UP! ";
   answerButtonsElement.classList.add("hide");
   localStorage.getItem("count");
-  questionElement.appendChild("Your Score " + count);
+  // questionElement.appendChild("Your Score " + count);
   
 }
 
