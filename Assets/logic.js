@@ -1,41 +1,124 @@
-const questions =[
+const quiz= [
   {
-    question: "How well does this app work?",
-    answers: [
-      {text: "Flaming hot cheetos", correct: false},
-      {text: "Dumpster Fire", correct: true},
-      {text: "Kind of ok", correct: false},
-      {text: "Got the questions to show up", correct: false}
-    ]
+    question: "Who was the only 6 star General in American History",
+    choices: [
+      "Mickey Mouse", "Capt'n Crunch", "John J. Pershing", "Lex Luthor" ],
+    answer: "John J. Pershing"
   },
   {
-    question: "Who was the only 6 star General in American History?",
-    answers: [
-      {text: "Mickey Mouse", correct: false},
-      {text: "Capt'n Crunch", correct: false},
-      {text: "John J. Pershing", correct: true},
-      {text: "Lex Luthor", correct: false}
-    ]
+    question: "Who was the only 6 star General in American History",
+    choices: [
+      "Mickey Mouse", "Capt'n Crunch", "John J. Pershing", "Lex Luthor" ],
+    answer: "John J. Pershing"
   },
   {
-    question: "What is the longest river in the world?",
-    answers: [
-      {text: "Nile", correct: true},
-      {text: "Yellor River", correct: false},
-      {text: "Amazon", correct: false},
-      {text: "Yangtze", correct: false}
-    ]
+    question: "Who was the only 6 star General in American History",
+    choices: [
+      "Mickey Mouse", "Capt'n Crunch", "John J. Pershing", "Lex Luthor" ],
+    answer: "John J. Pershing"
   },
   {
-    question: "Which band is NOT in the Rock N Roll hall of fame?",
-    answers: [
-      {text: "ACDC", correct: false},
-      {text: "Aerosmith", correct: false},
-      {text: "Beastie Boys", correct: false},
-      {text: "Motörhead", correct: true},
-    ]
+    question: "Who was the only 6 star General in American History",
+    choices: [
+      "Mickey Mouse", "Capt'n Crunch", "John J. Pershing", "Lex Luthor" ],
+    answer: "John J. Pershing"
   }
 ]
+
+let index;
+let timer;
+let quizTime;
+const timerSpan = document.getElementById("timer");
+const questionH1 = document.getElementById("question");
+const answersDiv = document.getElementById("answers");
+
+function onLoad(){
+   timerSpan.textContent="";
+   questionH1.textContent="Quiz";
+   const startBtn = document.createElement("button");
+   startBtn.textContent="Begin Quiz!";
+   startBtn.addEventListener("click", startQuiz);
+   answersDiv.append(startBtn);
+}
+
+function setTimer(){
+  timer=setInterval(function(){
+    quizTime --;
+    timerSpan.textContent="Time Left: "+quizTime;
+    if(quizTime<=0){
+      quizTime=0;
+      timerSpan.textContent="Time's Up!";
+      clearInterval(timer);
+
+    }
+  })
+}
+
+function startQuiz(){
+  quizTime=10;
+  index=0;
+  setTimer();
+  questionH1.textContent=quiz[index].question;
+  for(let i=0; i<quiz[index].choices.length; i++){
+    const button= document.createElement("button");
+    button.textContent= quiz[index].choices[i];
+    button.addEventListener("click", compareAnswer)
+    answersDiv.append(button);
+  }
+}
+
+function compareAnswer(event){
+  console.log(event);
+}
+
+onLoad();
+
+
+
+
+
+
+
+
+
+// const quiz =[
+//   {
+//     question: "How well does this app work?",
+//     answers: [
+//       {text: "Flaming hot cheetos", correct: false},
+//       {text: "Dumpster Fire", correct: true},
+//       {text: "Kind of ok", correct: false},
+//       {text: "Got the questions to show up", correct: false}
+//     ]
+//   },
+//   {
+//     question: "Who was the only 6 star General in American History?",
+//     answers: [
+//       {text: "Mickey Mouse", correct: false},
+//       {text: "Capt'n Crunch", correct: false},
+//       {text: "John J. Pershing", correct: true},
+//       {text: "Lex Luthor", correct: false}
+//     ]
+//   },
+//   {
+//     question: "What is the longest river in the world?",
+//     answers: [
+//       {text: "Nile", correct: true},
+//       {text: "Yellor River", correct: false},
+//       {text: "Amazon", correct: false},
+//       {text: "Yangtze", correct: false}
+//     ]
+//   },
+//   {
+//     question: "Which band is NOT in the Rock N Roll hall of fame?",
+//     answers: [
+//       {text: "ACDC", correct: false},
+//       {text: "Aerosmith", correct: false},
+//       {text: "Beastie Boys", correct: false},
+//       {text: "Motörhead", correct: true},
+//     ]
+//   }
+// ]
 
 // const startButton = document.getElementById("startbtn");
 // const nextButton =document.getElementById("nextbtn")
@@ -170,41 +253,3 @@ const questions =[
 //   element.classList.remove("wrong")
 // }
 
-// const questions =[
-//   {
-//     question: "testing",
-//     answers: [
-//       {text: "test", correct: false},
-//       {text: "test", correct: true},
-//       {text: "test", correct: false},
-//       {text: "test", correct: false}
-//     ]
-//   },
-//   {
-//     question: "testing",
-//     answers: [
-//       {text: "test", correct: false},
-//       {text: "test", correct: true},
-//       {text: "test", correct: false},
-//       {text: "test", correct: false}
-//     ]
-//   },
-//   {
-//     question: "testing",
-//     answers: [
-//       {text: "test", correct: false},
-//       {text: "test", correct: true},
-//       {text: "test", correct: false},
-//       {text: "test", correct: false}
-//     ]
-//   },
-//   {
-//     question: "testing",
-//     answers: [
-//       {text: "test", correct: false},
-//       {text: "test", correct: true},
-//       {text: "test", correct: false},
-//       {text: "test", correct: false}
-//     ]
-//   }
-// ]
