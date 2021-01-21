@@ -18,9 +18,9 @@ const quiz= [
       answer: "Motörhead"
     },
     {
-      question: "Who was the only 6 star General in American History",
+      question: "Which Bond actor has held the title (actively) the longest?",
       choices: [
-        "Mickey Mouse", "Capt'n Crunch", "John J. Pershing", "Lex Luthor" ],
-      answer: "John J. Pershing"
+        "Sean Connery", "Daniel Craig", "Roger Moore", "Pierce Brosnan" ],
+      answer: "Daniel Craig"
     }
   ]

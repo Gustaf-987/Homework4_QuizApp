@@ -1,14 +1,12 @@
 # Homework4_QuizApp
 
-Click the start button to begin the quiz. Application will display a random multiple choice question. Choosing the correct answer will flash green, choosing incorrectly will flash red and give a time penalty. 
+Click the start button to begin the quiz. Application will display a multiple choice question. Choosing the correct answer will advance the quiz, choosing incorrectly will give a time penalty. 
 
 Once all questions are answered, user score is captured based on time left. User may enter initals to be recorded into high score.
 
 Links:
 https://github.com/Gustaf-987/Homework4_QuizApp
+<br>
 https://gustaf-987.github.io/Homework4_QuizApp/
 
-![Screenshot](https://github.com/Gustaf-987/Homework4_QuizApp/blob/main/Assets/Screenshot%20(32).png)
-
-
-g
+<img href="Homework4_QuizApp\Assets\quizApp.png">
