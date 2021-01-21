@@ -9,4 +9,4 @@ https://github.com/Gustaf-987/Homework4_QuizApp
 <br>
 https://gustaf-987.github.io/Homework4_QuizApp/
 
-<img href="Homework4_QuizApp\Assets\quizApp.png">
+![screenshot](https://github.com/Gustaf-987/Homework4_QuizApp/blob/main/Assets/quizApp.png)
